@@ -3,7 +3,7 @@
 ## use parent environment to cache inversion results. This structure is 
 ## used by a custom Solve function cacheSolve that take a cacheMatrix
 ## as an input an try to retrieve the cached inverse if available.
-## Otherwise, it calculate the invert and populate the cache.
+## Otherwise, it calculate the inverse and populate the cache.
 ## 
 ## 
 ## This file contains definition of the functions makeCacheMatrix and cacheSolve
@@ -12,10 +12,10 @@
 ## makeCacheMatrix :`
 ## *****************
 ## makeCacheMatrix creates CacheMatrix "object" with 4 function, that can store  
-## matrix and its invert.
+## a matrix and its inverse.
 ## The functions set() and get(x) are used to set or get matrix data.
 ## The function setinv(x) is used to cached the inverse of the matrix
-## The funciton getinv() is used to retrieve cached value.
+## The funciton getinv() is used to retrieve inverse cached value.
 ##
 ## In reality the "object" is a list of the 4 function that set and
 ## access the cached value and datas in parent environment.
@@ -38,13 +38,13 @@ makeCacheMatrix <- function(x = matrix()) {
 ## cacheSolve :`
 ## ************
 ## cacheSolve is a custom Solve function. It takes a cacheMatrix list as input.
-## It first test if the cache invert is setted.
-## If there is an invert cached , it retrieves the invert from the environment 
+## It first test if the inverse cache is populated.
+## If there is an inverse cached , it retrieves it from the environment 
 ## using getinv() and skip the computation.
-## Otherwise is retrieve the Matrix datas using get(), 
-## run invert computation using function solve on them
+## Otherwise it retrieves the matrix datas using get(), 
+## compute inverse of the matrix using function solve
 ## and finally cache the result using setinv().
-## The inverted matrix is returned in both case.
+## The matrix inverse is returned in both case.
 
 cacheSolve <- function(x) {
         ## Return a matrix that is the inverse of 'x'
