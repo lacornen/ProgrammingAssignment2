@@ -6,7 +6,7 @@
 ## Otherwise, it calculate the invert and populate the cache.
 ## 
 ## 
-## This file contains definition of the functions makeCachematrix and cacheSolve
+## This file contains definition of the functions makeCacheMatrix and cacheSolve
 ## *****************************************************************************
 
 ## makeCacheMatrix :`
